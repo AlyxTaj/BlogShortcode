@@ -29,8 +29,8 @@ function bs_display_postlist($args){
 	if($blogParentId){			
 		$pages = get_db()->getTable('SimplePagesPage')->findAll();
 		$total=isset($args['number']) ? filter_var($args['number'],FILTER_VALIDATE_INT)  : 10;
-		$excerpt_length=isset($args['length']) ? filter_var($args['length'],FILTER_VALIDATE_INT) : 500; 
-		$show_author=isset($args['author']) ? filter_var($args['author'],FILTER_VALIDATE_BOOLEAN) : true;
+		$excerpt_length=isset($args['$snippetLength']) ? filter_var($args['$snippetLength'],FILTER_VALIDATE_INT) : 500; 
+		$show_author=isset($args['created_by_user_id']) ? filter_var($args['created_by_user_id'],FILTER_VALIDATE_BOOLEAN) : true;
 		$show_date=isset($args['date']) ? filter_var($args['date'],FILTER_VALIDATE_BOOLEAN) : true;
 		$posts=array();
 		$i=0;
